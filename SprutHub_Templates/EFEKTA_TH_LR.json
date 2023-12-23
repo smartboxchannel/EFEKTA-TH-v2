@@ -60,7 +60,6 @@
       ]
     },
     {
-      "visible": false,
       "type": "HumiditySensor",
       "characteristics": [
         {
