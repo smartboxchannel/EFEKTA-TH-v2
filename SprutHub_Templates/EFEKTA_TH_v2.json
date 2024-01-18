@@ -1,0 +1,224 @@
+{
+  "manufacturer": "EfektaLab",
+  "model": "EFEKTA_TH_v2",
+  "manufacturerId": "EfektaLab",
+  "modelId": "EFEKTA_TH_v2",
+  "template": "/_Battery/BatteryPercentageRemaining.json",
+  "init": [
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 10,
+        "max": 3600,
+        "change": 10
+	  }
+    },
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "attribute": "0000_MeasuredValue"
+      },
+      "bind": true,
+      "report": {
+        "min": 10,
+        "max": 3600,
+        "change": 25
+	  }
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0021_BatteryPercentageRemaining"
+        },
+        "bind": true,
+        "report": {
+          "min": 30,
+          "max": 3600,
+          "change": 1
+        }
+    }
+  ],
+  "services": [
+    {
+      "type": "TemperatureSensor",
+      "characteristics": [
+        {
+          "type": "CurrentTemperature",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0402_TemperatureMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    },
+    {
+      "type": "HumiditySensor",
+      "characteristics": [
+        {
+          "type": "CurrentRelativeHumidity",
+          "link": {
+            "endpoint": 1,
+            "cluster": "0405_RelativeHumidityMeasurement",
+            "attribute": "0000_MeasuredValue"
+          }
+        }
+      ]
+    }
+  ],
+  "options": [
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0201_ReportDelay"
+        },
+        "name": "Интервал отправки данных",
+        "type": "Integer",
+        "init": false,
+        "value": 15,
+        "minValue": 10,
+        "maxValue": 3600,
+        "minStep": 1
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0275_ConfigReportEnable"
+        },
+        "name": "Работа по пользовательским настройкам отчетов",
+        "type": "Boolean",
+        "init": false,
+        "value": false
+    },
+	{
+        "link": {
+          "endpoint": 1,
+          "cluster": "0001_PowerConfiguration",
+          "attribute": "0205_ConfigReportEnable"
+        },
+        "name": "Сравнение новых данных с предыдущими",
+        "type": "Boolean",
+        "init": false,
+        "value": true
+    },
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0220_Enable"
+		},
+      "name": "Термостат",
+      "type": "Boolean",
+      "init": false,
+      "value": false
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0402_TemperatureMeasurement",
+          "attribute": "0225_Invert"
+          },
+        "name": "Термостат, Инвертирование",
+        "type": "Boolean",
+        "init": false,
+        "value": false
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0221_high_temp"
+		},
+      "name": "Термостат, верхняя температура",
+      "type": "Integer",
+      "init": false,
+      "value": 1,
+      "minValue": -40,
+      "maxValue": 90,
+      "minStep": 1
+	},
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0402_TemperatureMeasurement",
+        "attribute": "0222_low_temp"
+		},
+      "name": "Термостат, нижняя температура",
+      "type": "Integer",
+      "init": false,
+      "value": 1,
+      "minValue": -40,
+      "maxValue": 90,
+      "minStep": 1
+	},
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "attribute": "0220_Enable"
+		},
+      "name": "Гигростат",
+      "type": "Boolean",
+      "init": false,
+      "value": false
+    },
+    {
+        "link": {
+          "endpoint": 1,
+          "cluster": "0405_RelativeHumidityMeasurement",
+          "attribute": "0225_Invert"
+          },
+        "name": "Гигростат, Инвертирование",
+        "type": "Boolean",
+        "init": false,
+        "value": false
+    },
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "attribute": "0221_high_hum"
+		},
+      "name": "Гигростат, верхняя граница",
+      "type": "Integer",
+      "init": false,
+      "value": 1,
+      "minValue": 0,
+      "maxValue": 99
+	},
+	{
+      "link": {
+        "endpoint": 1,
+        "cluster": "0405_RelativeHumidityMeasurement",
+        "attribute": "0222_low_hum"
+		},
+      "name": "Гигростат, нижняя граница",
+      "type": "Integer",
+      "init": false,
+      "value": 1,
+      "minValue": 0,
+      "maxValue": 99
+	},
+    {
+      "link": {
+        "endpoint": 1,
+        "cluster": "0006_OnOff",
+        "output": true
+      },
+      "name": "Прямая работа вкл/выкл",
+      "description": "Работает биндинг только одного параметра.",
+      "type": "String",
+      "bind": true,
+      "bindGroup": true
+    }
+  ]
+}
