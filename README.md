@@ -1,4 +1,4 @@
-# EFEKTA-TH-V2
+# EFEKTA-TH-v2
 
 Телеграм чат DIY Devices - https://t.me/diy_devices
 
