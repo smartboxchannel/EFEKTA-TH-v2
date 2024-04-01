@@ -2,7 +2,6 @@ const fz = require('zigbee-herdsman-converters/converters/fromZigbee');
 const tz = require('zigbee-herdsman-converters/converters/toZigbee');
 const exposes = require('zigbee-herdsman-converters/lib/exposes');
 const reporting = require('zigbee-herdsman-converters/lib/reporting');
-const extend = require('zigbee-herdsman-converters/lib/extend');
 const e = exposes.presets;
 const ea = exposes.access;
 
@@ -155,9 +154,9 @@ const definition = {
                 .withValueMin(-50).withValueMax(120),				
 		    exposes.binary('enable_hum', ea.STATE_SET, 'ON', 'OFF').withDescription('Enable Humidity Control'),
 		    exposes.binary('invert_logic_hum', ea.STATE_SET, 'ON', 'OFF').withDescription('Invert Logoc Humidity Control'),
-            exposes.numeric('high_hum', ea.STATE_SET).withUnit('C').withDescription('Setting High Humidity Border')
+            exposes.numeric('high_hum', ea.STATE_SET).withUnit('%').withDescription('Setting High Humidity Border')
                 .withValueMin(0).withValueMax(99),
-            exposes.numeric('low_hum', ea.STATE_SET).withUnit('C').withDescription('Setting Low Humidity Border')
+            exposes.numeric('low_hum', ea.STATE_SET).withUnit('%').withDescription('Setting Low Humidity Border')
                 .withValueMin(0).withValueMax(99),
 			exposes.numeric('sensor_identifier', ea.STATE).withDescription('Sensor type, identifier')],
 };
