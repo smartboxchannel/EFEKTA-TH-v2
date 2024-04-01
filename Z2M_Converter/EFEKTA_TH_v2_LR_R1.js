@@ -148,9 +148,9 @@ const definition = {
 		    exposes.binary('comparison_previous_data', ea.STATE_SET, 'ON', 'OFF').withDescription('Enable сontrol of comparison with previous data'),
 		    exposes.binary('enable_temp', ea.STATE_SET, 'ON', 'OFF').withDescription('Enable Temperature Control'),
 		    exposes.binary('invert_logic_temp', ea.STATE_SET, 'ON', 'OFF').withDescription('Invert Logic Temperature Control'),
-            exposes.numeric('high_temp', ea.STATE_SET).withUnit('C').withDescription('Setting High Temperature Border')
+            exposes.numeric('high_temp', ea.STATE_SET).withUnit('°C').withDescription('Setting High Temperature Border')
                 .withValueMin(-50).withValueMax(120),
-            exposes.numeric('low_temp', ea.STATE_SET).withUnit('C').withDescription('Setting Low Temperature Border')
+            exposes.numeric('low_temp', ea.STATE_SET).withUnit('°C').withDescription('Setting Low Temperature Border')
                 .withValueMin(-50).withValueMax(120),				
 		    exposes.binary('enable_hum', ea.STATE_SET, 'ON', 'OFF').withDescription('Enable Humidity Control'),
 		    exposes.binary('invert_logic_hum', ea.STATE_SET, 'ON', 'OFF').withDescription('Invert Logoc Humidity Control'),
