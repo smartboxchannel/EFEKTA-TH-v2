@@ -263,7 +263,7 @@
       "name": "Мощность радио передатчика",
       "type": "Integer",
       "init": false,
-      "value": 19,
+      "value": 4,
       "values": [
         {
           "value": 0,
