@@ -1,6 +1,6 @@
 {
   "name": "Датчик EFEKTA TH v2 Long Range",
-  "manufacturer": "EfektaLab",
+  "manufacturer": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
   "model": "EFEKTA_TH_v2_LR",
   "manufacturerId": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
   "modelId": "EFEKTA_TH_v2_LR",
