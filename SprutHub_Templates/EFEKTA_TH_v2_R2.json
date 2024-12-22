@@ -2,7 +2,7 @@
   "name": "Датчик EFEKTA TH v2",
   "manufacturer": "EfektaLab",
   "model": "EFEKTA_TH_v2",
-  "manufacturerId": "(EfektaLab|EfektaLab_for_Zigbee-Shop.ru)",
+  "manufacturerId": "EfektaLab",
   "modelId": "EFEKTA_TH_v2",
   "catalogId": -1,
   "status": "Test",
@@ -247,8 +247,7 @@
         "type": "String",
         "init": false,
         "write": false,
-        "input": "status",
-		"value": 0
+        "input": "status"
     },
 	{
         "link": {
