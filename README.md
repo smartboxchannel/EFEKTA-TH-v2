@@ -58,7 +58,7 @@ Reports can be configured through Zigbee2MQTT to customize data transmission int
 |-----------|-------|
 | **Model** | TH v2 |
 | **Protocol** | ZigBee 3.0 |
-| **Primary sensor** | SHTC3, cable length 1 m |
+| **Primary sensor** | SHTC3, cable length 1 m | 2 m |
 | **Dimensions** | 8 × 3 × 3 cm |
 | **Temperature range** | -40°C ~ +125°C, accuracy 0.2°C |
 | **Humidity range** | 0% - 100%, accuracy 2% |
